@@ -1,0 +1,14 @@
+-- AMBIENTE VIRTUAL -- 
+python3 -m venv whiper_model
+source whisper_model/bin/activate
+
+-- INSTALAÇÃO WHISPER -- 
+pip install -U openai-whisper
+
+Dependências:
+ffmpeg:
+sudo apt install ffmpeg
+
+rust:
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+pip install setuptools-rust
