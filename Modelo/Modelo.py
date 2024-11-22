@@ -5,7 +5,7 @@ import os
 
 model = whisper.load_model('small')
 
-def transcrever_audio(audio_path):
+def transcrever_audio(aurio_path):
     if not os.path.exists(audio_path):
         print(f"Erro: O arquivo de áudio {audio_path} não foi encontrado.")
         return None
