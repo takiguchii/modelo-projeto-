@@ -5,12 +5,10 @@ import os
 def dividir_texto(texto, limite=100): 
     return [texto[i:i+limite] for i in range(0, len(texto), limite)]
 
-def texto_para_audio():
-    texto = input("Digite o texto que deseja transformar em áudio: ")
-    
+def texto_para_audio(texto):
     partes_texto = dividir_texto(texto)
     
-    pasta_audio = "audios"
+    pasta_audio = "AudioOutput"
     
     if not os.path.exists(pasta_audio):
         os.makedirs(pasta_audio)
@@ -25,12 +23,9 @@ def texto_para_audio():
         tts.save(arquivo_audio)
         
         print(f"Reproduzindo a parte {i + 1}... Arquivo salvo em {arquivo_audio}")
-        
-        # Carregar e reproduzir a parte do áudio
+
         pygame.mixer.music.load(arquivo_audio)
         pygame.mixer.music.play()
 
         while pygame.mixer.music.get_busy():
             pygame.time.Clock().tick(10)
-
-texto_para_audio()
