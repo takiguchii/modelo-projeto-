@@ -2,6 +2,9 @@ import os
 from whisper_transcriber import transcrever_audio  
 from ollama_model import perguntar  
 from text_to_speech import texto_para_audio  
+import os
+
+
 
 audio_input_folder = './AudioInput'
 audio_output_folder = './AudioOutput'
@@ -12,6 +15,7 @@ def processar_audios():
         if arquivo.endswith(('.m4a', '.mp3', '.wav')):
             audio_path = os.path.join(audio_input_folder, arquivo)
             print(f"Processando o arquivo: {audio_path}")
+            print(" ")
             
             texto_transcrito = transcrever_audio(audio_path)
 

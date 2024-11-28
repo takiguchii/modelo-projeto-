@@ -16,6 +16,7 @@ def texto_para_audio(texto):
     pygame.mixer.init()
 
     for i, parte in enumerate(partes_texto):
+        # Criar o arquivo de áudio com o gTTS
         tts = gTTS(text=parte, lang='pt')
         
         arquivo_audio = os.path.join(pasta_audio, f"audio_{i}.mp3")
